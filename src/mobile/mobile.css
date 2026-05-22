@@ -397,6 +397,64 @@
   margin-top: 8px;
 }
 
+/* ---- Bullet list ---- */
+.m-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.m-bullet-list span {
+  padding: 10px 0;
+  border-top: 1px solid var(--line-soft);
+  font-size: 14px;
+  color: var(--ink-2);
+  padding-left: 16px;
+  position: relative;
+}
+
+.m-bullet-list span:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.m-bullet-list span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--accent-2);
+}
+
+/* ---- Product features (mobile) ---- */
+.m-prod-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.m-prod-feats li {
+  font-size: 11px;
+  color: var(--ink-2);
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.m-prod-feats li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 1px;
+  background: var(--ink);
+}
+
 /* ---- Problem list ---- */
 .m-problem-list {
   display: flex;

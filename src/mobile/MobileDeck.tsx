@@ -242,10 +242,10 @@ function MThreePillars() {
 
 function MProductPlatform() {
   const products = [
-    { ico: 'F', name: 'FLEX', desc: 'Day-of-travel commercial platform.' },
-    { ico: 'C', name: 'CREW', desc: 'Modern crew experience platform.' },
-    { ico: 'A', name: 'AGENTS', desc: 'AI-powered conversational interfaces.' },
-    { ico: 'R', name: 'RETAIL', desc: 'Future airline retailing platform.' },
+    { ico: 'F', name: 'FLEX', desc: 'Day-of-travel commercial platform.', feats: ['Day-of-travel flexibility', 'Courtesy upgrades', 'Upgrade bidding', 'Flexibility as ancillary'] },
+    { ico: 'C', name: 'CREW', desc: 'Modern crew experience platform.', feats: ['Roster application', 'Communication hub', 'Bidding & swapping', 'Crew self-service'] },
+    { ico: 'A', name: 'AGENTS', desc: 'AI-powered conversational interfaces.', feats: ['Internal super-agent', 'Operational assistant', 'Customer servicing chatbot', 'Knowledge orchestration'] },
+    { ico: 'R', name: 'RETAIL', desc: 'Future airline retailing platform.', feats: ['Offers & Orders', 'Ancillary sales', 'Dynamic personalisation', 'NDC-ready'] },
   ]
   return (
     <MSlide>
@@ -257,6 +257,9 @@ function MProductPlatform() {
             <div className="m-prod-ico">{p.ico}</div>
             <div className="m-prod-name">TO<span className="col">:</span>MRW {p.name}</div>
             <p className="m-prod-desc">{p.desc}</p>
+            <ul className="m-prod-feats">
+              {p.feats.map((f, j) => <li key={j}>{f}</li>)}
+            </ul>
           </div>
         ))}
       </div>
@@ -343,11 +346,28 @@ function MAfKlm() {
     <MSlide>
       <MChrome label="04 — Strategic Synergy" />
       <h2 className="m-heading">Supporting the <em>AF-KLM</em> transition.</h2>
-      <p className="m-body">Retain access to critical knowledge during integration — without scaling headcount.</p>
-      <div className="m-cards-stack" style={{ marginTop: 20 }}>
-        <div className="m-card"><span className="m-card-title">i. Innovation lab for AF-KLM</span></div>
-        <div className="m-card"><span className="m-card-title">ii. Modular tech for SkyTeam</span></div>
-        <div className="m-card"><span className="m-card-title">iii. Industry-wide platform</span></div>
+      <p className="m-body">Retain access to critical knowledge and resources during the integration journey — without scaling internal headcount.</p>
+      <div className="m-cards-stack" style={{ marginTop: 12 }}>
+        <div className="m-card">
+          <span className="m-card-title">i. Innovation lab partner for AF-KLM</span>
+          <p className="m-card-desc">Shared experimentation and AI infrastructure.</p>
+        </div>
+        <div className="m-card">
+          <span className="m-card-title">ii. Modular technology provider for SkyTeam</span>
+          <p className="m-card-desc">Reusable airline-native modules across the alliance.</p>
+        </div>
+        <div className="m-card">
+          <span className="m-card-title">iii. Industry-wide airline technology platform</span>
+          <p className="m-card-desc">Shared innovation, rapid experimentation, AI & retailing.</p>
+        </div>
+      </div>
+      <div className="m-cards-stack" style={{ marginTop: 16 }}>
+        <p className="m-label-sm">Key benefits</p>
+        <div className="m-bullet-list">
+          <span>Continuity of key competencies</span>
+          <span>Flexible access to specialised airline talent</span>
+          <span>Reduced dependency on internal hiring</span>
+        </div>
       </div>
     </MSlide>
   )
@@ -359,18 +379,22 @@ function MPartnershipOptions() {
       <MChrome label="05 — Options" />
       <p className="m-kicker">Chapter 05</p>
       <h2 className="m-heading">Three models <em>under consideration.</em></h2>
+      <p className="m-body">Each option trades complexity for strategic alignment — from standalone to fully co-owned.</p>
       <div className="m-cards-stack">
         <div className="m-card">
           <div className="m-card-head"><span className="m-card-num" style={{ fontSize: 32 }}>A</span><span className="m-chip">No equity</span></div>
           <span className="m-card-title">Strategic Design Partner</span>
+          <p className="m-card-desc">A "clean" standalone model. No equity or revenue sharing — SAS engages purely as a strategic customer.</p>
         </div>
-        <div className="m-card m-card-dark">
-          <div className="m-card-head"><span className="m-card-num" style={{ fontSize: 32 }}>B</span><span className="m-chip">Recommended</span></div>
+        <div className="m-card">
+          <div className="m-card-head"><span className="m-card-num" style={{ fontSize: 32 }}>B</span><span className="m-chip">Revenue share</span></div>
           <span className="m-card-title">Royalty Arrangement</span>
+          <p className="m-card-desc">SAS receives a percentage of revenue from third-party sales of co-developed products.</p>
         </div>
         <div className="m-card">
           <div className="m-card-head"><span className="m-card-num" style={{ fontSize: 32 }}>C</span><span className="m-chip">20–30%</span></div>
           <span className="m-card-title">Equity Deal</span>
+          <p className="m-card-desc">SAS takes a minority equity position in TO:MRW (20–30%).</p>
         </div>
       </div>
     </MSlide>
@@ -470,15 +494,35 @@ function MRoadmap() {
 }
 
 function MLongTermVision() {
+  const areas = [
+    { title: 'Commercial', desc: 'Retail, pricing, ancillaries' },
+    { title: 'Operations', desc: 'Crew, day-of-travel, ops AI' },
+    { title: 'Customer servicing', desc: 'Conversational, self-service' },
+    { title: 'AI enablement', desc: 'Models, orchestration, agents' },
+  ]
+  const future = [
+    'Airline-specific AI models',
+    'Dynamic pricing',
+    'Loyalty & award optimisation',
+    'B2C conversational booking',
+  ]
   return (
     <MSlide>
       <MChrome label="10 — Vision" />
       <p className="m-kicker">Chapter 10</p>
       <h2 className="m-heading">The <em>modular operating layer</em> for airlines.</h2>
+      <p className="m-label-sm" style={{ marginTop: 12 }}>Across the airline</p>
       <div className="m-cards-stack">
-        {['Commercial', 'Operations', 'Customer servicing', 'AI enablement'].map((item, i) => (
-          <div className="m-card" key={i}><span className="m-card-title">{item}</span></div>
+        {areas.map((item, i) => (
+          <div className="m-card" key={i}>
+            <span className="m-card-title">{item.title}</span>
+            <p className="m-card-desc">{item.desc}</p>
+          </div>
         ))}
+      </div>
+      <p className="m-label-sm" style={{ marginTop: 16 }}>Future expansion</p>
+      <div className="m-bullet-list">
+        {future.map((item, i) => <span key={i}>{item}</span>)}
       </div>
     </MSlide>
   )

@@ -45,14 +45,14 @@ export function PartnershipOptions() {
         </div>
 
         {/* Option B */}
-        <div className="opt featured">
+        <div className="opt">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <div className="letter">B</div>
-            <div className="label" style={{ color: 'rgba(251,248,242,0.55)', textAlign: 'right' }}>Revenue share<br />No equity</div>
+            <div className="label" style={{ textAlign: 'right' }}>Revenue share<br />No equity</div>
           </div>
-          <div className="label" style={{ marginTop: 4, color: 'rgba(251,248,242,0.55)' }}>Option B · Recommended</div>
+          <div className="label" style={{ marginTop: 4 }}>Option B</div>
           <h3>Royalty Arrangement</h3>
-          <p style={{ fontSize: 16, lineHeight: 1.45, color: 'rgba(251,248,242,0.78)' }}>
+          <p style={{ fontSize: 16, lineHeight: 1.45, color: 'var(--ink-2)' }}>
             A hybrid model: SAS receives a percentage of revenue from third-party sales of co-developed products.
           </p>
           <div style={{ marginTop: 'auto', paddingTop: 20 }}>
