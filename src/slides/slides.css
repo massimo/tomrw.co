@@ -142,16 +142,15 @@
 }
 
 .cover h1 {
-  font-family: "Instrument Serif", serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 380px;
   line-height: 0.82;
-  letter-spacing: -0.04em;
-  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-weight: 900;
 }
 
 .cover h1 .col {
   color: var(--accent-2);
-  font-style: italic;
 }
 
 .cover .tag {

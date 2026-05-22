@@ -218,11 +218,11 @@
 }
 
 .m-cover-title {
-  font-family: "Instrument Serif", serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 80px;
-  font-weight: 400;
+  font-weight: 900;
   line-height: 0.85;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .m-cover-title .col {
