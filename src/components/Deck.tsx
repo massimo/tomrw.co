@@ -108,6 +108,30 @@ export function Deck({ children }: DeckProps) {
     return () => window.removeEventListener('resize', resize)
   }, [])
 
+  // Auto-fullscreen on landscape (mobile)
+  useEffect(() => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    if (!isMobile) return
+
+    const handleOrientation = () => {
+      const isLandscape = window.matchMedia('(orientation: landscape)').matches
+      const doc = document.documentElement
+
+      if (isLandscape && !document.fullscreenElement) {
+        doc.requestFullscreen?.().catch(() => {})
+      } else if (!isLandscape && document.fullscreenElement) {
+        document.exitFullscreen?.().catch(() => {})
+      }
+    }
+
+    const mql = window.matchMedia('(orientation: landscape)')
+    mql.addEventListener('change', handleOrientation)
+    // Check on mount in case already landscape
+    handleOrientation()
+
+    return () => mql.removeEventListener('change', handleOrientation)
+  }, [])
+
   return (
     <div className="deck" ref={containerRef}>
       <div
