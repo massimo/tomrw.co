@@ -1,5 +1,6 @@
 import { Deck } from './components/Deck'
 import { MobileDeck } from './mobile/MobileDeck'
+import { PasswordGate } from './components/PasswordGate'
 import { Cover } from './slides/Cover'
 import { OpeningQuote } from './slides/OpeningQuote'
 import { Contents } from './slides/Contents'
@@ -54,7 +55,11 @@ function DesktopDeck() {
 
 function App() {
   const isMobile = useIsMobile()
-  return isMobile ? <MobileDeck /> : <DesktopDeck />
+  return (
+    <PasswordGate>
+      {isMobile ? <MobileDeck /> : <DesktopDeck />}
+    </PasswordGate>
+  )
 }
 
 export default App
