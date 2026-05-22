@@ -1,0 +1,40 @@
+.deck {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0e0d0b;
+  position: relative;
+}
+
+.deck-viewport {
+  position: relative;
+  transform-origin: center center;
+  flex-shrink: 0;
+}
+
+.deck-slide {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.deck-slide.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.deck-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  z-index: 100;
+}

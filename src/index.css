@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #f1ede6;
+  --bg-2: #e7e1d6;
+  --ink: #14130f;
+  --ink-2: #2b2924;
+  --muted: #7a756c;
+  --line: #14130f;
+  --line-soft: rgba(20,19,15,.14);
+  --accent: #1f3b4d;
+  --accent-2: #c84a1c;
+  --paper: #fbf8f2;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #0e0d0b;
+  color: var(--ink);
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+h1, h2, h3, h4, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
