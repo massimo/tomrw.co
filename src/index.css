@@ -23,7 +23,6 @@ html, body, #root {
   background: #0e0d0b;
   color: var(--ink);
   height: 100%;
-  overflow: hidden;
 }
 
 body {

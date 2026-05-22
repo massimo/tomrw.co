@@ -1,4 +1,5 @@
 import { Deck } from './components/Deck'
+import { MobileDeck } from './mobile/MobileDeck'
 import { Cover } from './slides/Cover'
 import { OpeningQuote } from './slides/OpeningQuote'
 import { Contents } from './slides/Contents'
@@ -19,7 +20,13 @@ import { Roadmap } from './slides/Roadmap'
 import { LongTermVision } from './slides/LongTermVision'
 import { FinalStatement } from './slides/FinalStatement'
 
-function App() {
+function useIsMobile() {
+  if (window.location.hash === '#desktop') return false
+  if (window.location.hash === '#mobile') return true
+  return window.innerWidth <= 768 || /iPhone|iPod|Android.*Mobile/i.test(navigator.userAgent)
+}
+
+function DesktopDeck() {
   return (
     <Deck>
       <Cover />
@@ -43,6 +50,11 @@ function App() {
       <FinalStatement />
     </Deck>
   )
+}
+
+function App() {
+  const isMobile = useIsMobile()
+  return isMobile ? <MobileDeck /> : <DesktopDeck />
 }
 
 export default App

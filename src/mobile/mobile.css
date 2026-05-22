@@ -1,0 +1,608 @@
+/* ---- Mobile Deck ---- */
+.m-deck {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Progress ---- */
+.m-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--line-soft);
+  z-index: 10;
+}
+
+.m-progress-bar {
+  height: 100%;
+  background: var(--accent-2);
+  transition: width 0.3s ease;
+}
+
+/* ---- Slide track ---- */
+.m-slides {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.m-slide-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.m-slide {
+  min-width: 100%;
+  height: 100%;
+  padding: 56px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---- Navigation ---- */
+.m-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 24px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  background: var(--bg);
+  border-top: 1px solid var(--line-soft);
+}
+
+.m-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.m-nav-btn:active:not(:disabled) {
+  background: var(--line-soft);
+}
+
+.m-nav-btn:disabled {
+  opacity: 0.25;
+}
+
+.m-nav-info {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  min-width: 50px;
+  text-align: center;
+}
+
+.m-nav-current {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.m-nav-sep {
+  opacity: 0.4;
+  margin: 0 4px;
+}
+
+/* ---- Chrome ---- */
+.m-chrome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.m-chrome-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+/* ---- Typography ---- */
+.m-logo {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.m-logo .col,
+.col {
+  color: var(--accent-2);
+}
+
+.m-label-sm {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.m-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.m-display {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.m-display em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+
+.m-heading {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.m-heading em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+
+.m-body {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.m-flow {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  color: var(--ink);
+  margin-top: auto;
+}
+
+.m-flow em {
+  color: var(--accent-2);
+  font-style: italic;
+}
+
+/* ---- Cover ---- */
+.m-cover {
+  padding: 32px 24px;
+  justify-content: space-between;
+}
+
+.m-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.m-cover-center {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.m-cover-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+.m-cover-title .col {
+  color: var(--accent-2);
+}
+
+.m-cover-tag {
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  max-width: 320px;
+}
+
+.m-cover-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.m-stamp {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+}
+
+/* ---- Quote ---- */
+.m-quote-mark {
+  font-family: "Instrument Serif", serif;
+  font-size: 100px;
+  line-height: 0.6;
+  color: var(--accent-2);
+}
+
+.m-blockquote {
+  font-family: "Instrument Serif", serif;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.m-blockquote em {
+  font-style: italic;
+}
+
+.m-attrib {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+/* ---- Index ---- */
+.m-index {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.m-index-row {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+  align-items: baseline;
+}
+
+.m-index-ix {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  min-width: 28px;
+}
+
+.m-index-ti {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Cards ---- */
+.m-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.m-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.m-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.m-card-num {
+  font-family: "Instrument Serif", serif;
+  font-size: 24px;
+  color: var(--accent-2);
+}
+
+.m-card-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.m-card-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.m-card-accent {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: var(--paper);
+}
+
+.m-card-accent .m-card-title {
+  color: var(--paper);
+}
+
+.m-card-accent .m-card-desc {
+  color: rgba(251, 248, 242, 0.8);
+}
+
+.m-card-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.m-card-dark .m-card-title {
+  color: var(--paper);
+}
+
+.m-card-dark .m-card-num {
+  color: var(--accent-2);
+}
+
+.m-chip {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.m-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* ---- Problem list ---- */
+.m-problem-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-problem-row {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+  align-items: baseline;
+}
+
+.m-problem-row:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.m-problem-n {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  min-width: 24px;
+}
+
+.m-problem-t {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---- KV list ---- */
+.m-kv-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.m-kv:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.m-kv-k {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.m-kv-v {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ---- Products ---- */
+.m-prod-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.m-prod-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.m-prod-ico {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Instrument Serif", serif;
+  font-size: 16px;
+  color: var(--accent-2);
+}
+
+.m-prod-name {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.m-prod-desc {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* ---- Two column ---- */
+.m-two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Footnotes ---- */
+.m-footnotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.m-footnotes span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 8px;
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+}
+
+/* ---- Timeline ---- */
+.m-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.m-timeline-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line-soft);
+  align-items: center;
+}
+
+.m-timeline-item:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.m-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  flex-shrink: 0;
+}
+
+.m-timeline-content {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.m-timeline-month {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  min-width: 70px;
+}
+
+.m-timeline-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---- Final slide ---- */
+.m-final {
+  background: var(--ink);
+  color: var(--paper);
+  justify-content: center;
+}
+
+.m-final-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.m-final-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.m-final-title em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+
+.m-final-sub {
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(251, 248, 242, 0.7);
+  margin-top: 8px;
+}
