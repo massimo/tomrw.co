@@ -7,6 +7,8 @@
   overflow: hidden;
   background: #0e0d0b;
   position: relative;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .deck-viewport {
@@ -28,13 +30,108 @@
   opacity: 1;
 }
 
-.deck-counter {
+/* ---- Pagination ---- */
+.deck-pagination {
   position: fixed;
-  bottom: 20px;
-  right: 24px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.4);
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
   z-index: 100;
+  background: rgba(20, 19, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+.deck-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.deck-nav-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.deck-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.deck-page-info {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 56px;
+  justify-content: center;
+}
+
+.deck-page-current {
+  color: #fff;
+  font-weight: 500;
+}
+
+.deck-page-sep {
+  opacity: 0.4;
+}
+
+/* ---- Progress bar ---- */
+.deck-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  z-index: 100;
+}
+
+.deck-progress-bar {
+  height: 100%;
+  background: var(--accent-2, #c84a1c);
+  transition: width 0.3s ease;
+}
+
+/* ---- Responsive: mobile adjustments ---- */
+@media (max-width: 768px) {
+  .deck-pagination {
+    bottom: 16px;
+    padding: 6px 12px;
+    gap: 10px;
+  }
+
+  .deck-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .deck-page-info {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .deck-pagination {
+    bottom: 12px;
+    padding: 6px 10px;
+    gap: 8px;
+  }
 }
