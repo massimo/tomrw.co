@@ -4,8 +4,8 @@ import { Chrome, Logo, Dot } from '../components/Chrome'
 const leakage = [
   {
     area: 'Cabin upgrade revenue',
-    how: 'Static pricing, no dynamic bidding. Seats fly empty in Business while passengers who\'d pay more are never offered the chance. A mid-size carrier like SAS has ~€100M in upgrade potential — yet historically paid 7–8% commission to SaaS vendors for basic bidding tools. TO:MRW delivers smarter pricing at a fraction of that cost.',
-    loss: '~€100M potential',
+    how: 'Static pricing, no dynamic bidding. Seats fly empty in Business while passengers who\'d pay more are never offered the chance. A mid-size carrier like SAS has ~€40M in upgrade potential — yet historically paid 7–8% commission to SaaS vendors for basic bidding tools. TO:MRW delivers smarter pricing at a fraction of that cost.',
+    loss: '~€40M potential',
     sublabel: 'For a carrier the size of SAS',
     solution: 'Upgrade Optimizer',
   },
