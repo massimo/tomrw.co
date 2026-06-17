@@ -9,7 +9,6 @@ import { ProductPlatform } from './slides/ProductPlatform'
 import { SasPartnership } from './slides/SasPartnership'
 import { CommercialModel } from './slides/CommercialModel'
 import { PartnershipOptions } from './slides/PartnershipOptions'
-import { GtmBusiness } from './slides/GtmBusiness'
 import { LongTermVision } from './slides/LongTermVision'
 import { FinalStatement } from './slides/FinalStatement'
 
@@ -45,7 +44,6 @@ function AppV2() {
         <PartnershipOptions />
 
         {/* Part V: Business */}
-        <GtmBusiness />
         <FinancialModel />
         <RoadmapV2 />
 

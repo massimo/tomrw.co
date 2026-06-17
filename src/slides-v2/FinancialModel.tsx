@@ -31,12 +31,12 @@ export function FinancialModel() {
           <div className="label">Cost structure</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             {[
+              { item: 'Founder(s)', cost: '€350K' },
               { item: 'Engineering (2 FTE)', cost: '€180K' },
-              { item: 'Product contractor', cost: '€36K' },
-              { item: 'Infrastructure / AI', cost: '€36K' },
+              { item: 'Infrastructure & AI', cost: '€36K' },
               { item: 'Legal & corporate', cost: '€30K' },
               { item: 'Sales & events', cost: '€24K' },
-              { item: 'Other / buffer', cost: '€44K' },
+              { item: 'Other', cost: '€44K' },
             ].map((row, i, arr) => (
               <div
                 key={i}
@@ -67,9 +67,9 @@ export function FinancialModel() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <span className="label">Year 1 total burn</span>
-            <span className="display" style={{ fontSize: 52, color: 'var(--ink)' }}>€350K</span>
+            <span className="display" style={{ fontSize: 52, color: 'var(--ink)' }}>€664K</span>
           </div>
-          <div className="label" style={{ color: 'var(--muted)' }}>~€29K / month</div>
+          <div className="label" style={{ color: 'var(--muted)' }}>~€55K / month</div>
         </div>
 
         {/* Revenue scenarios */}
@@ -137,7 +137,7 @@ export function FinancialModel() {
 
           <div>
             <div className="display" style={{ fontSize: 120, lineHeight: 0.9, color: 'var(--accent-2)' }}>
-              €1.2M
+              €1.4M
             </div>
             <div style={{ marginTop: 16, fontSize: 20, color: 'var(--ink-2)' }}>Seed — 24-month runway</div>
           </div>

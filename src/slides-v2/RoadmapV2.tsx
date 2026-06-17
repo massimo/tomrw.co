@@ -22,7 +22,7 @@ const phases = [
       'Convert SAS pilot to full paid contract (SaaS + revshare). First real ARR.',
       'Close seed round (€1.2–1.5M) using SAS ROI data and LOI from airline #2.',
       'Hire AI/ML engineer. Build Checkout Optimizer and Ancillary Platform.',
-      'Sign airline #2 (Finnair or TAP). Begin implementation sprint.',
+      'Sign contract with airline #2. Begin implementation sprint.',
       'Founder transitions out of SAS — full-time CEO by month 12.',
     ],
   },
